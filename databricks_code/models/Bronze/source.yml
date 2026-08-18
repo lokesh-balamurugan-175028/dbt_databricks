@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: postgreSQL       # A logical name you choose (used in your SQL)
+    catalog: ad_databrickslearning           # Your Databricks catalog name
+    schema: ingestion_schema               # Your Databricks schema/database name
+    tables:
+      - name: demo_customers       # The actual table name in Databricks
+      - name: demo_orders
+        identifier: orders
