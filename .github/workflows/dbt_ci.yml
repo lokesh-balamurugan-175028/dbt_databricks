@@ -1,0 +1,58 @@
+name: dbt CI Check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run-dbt-ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout the repository code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Set up Python environment
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      # 3. Install dependencies (dbt-databricks)
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install dbt-databricks
+
+      # 4. Configure dbt profiles.yml using GitHub Secrets
+      - name: Set up dbt profile
+        run: |
+          mkdir -p ~/.dbt
+          echo "
+          databricks_dbt_project:
+            target: ci
+            outputs:
+              ci:
+                type: databricks
+                method: token
+                host: ${{ secrets.DATABRICKS_HOST }}
+                http_path: ${{ secrets.DATABRICKS_HTTP_PATH }}
+                token: ${{ secrets.DATABRICKS_TOKEN }}
+                catalog: prod
+                schema: ci_test_schema
+                threads: 4
+          " > ~/.dbt/profiles.yml
+
+      # 5. Run dbt dependency check and connection test
+      - name: Run dbt deps and debug
+        run: |
+          dbt deps
+          dbt debug
+
+      # 6. Run dbt build on modified models (CI safety check)
+      - name: Run dbt build
+        run: |
+          dbt build --target ci
