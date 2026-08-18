@@ -7,4 +7,3 @@ sources:
     tables:
       - name: demo_customers       # The actual table name in Databricks
       - name: demo_orders
-        identifier: orders
