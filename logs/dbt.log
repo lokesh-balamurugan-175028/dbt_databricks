@@ -1,0 +1,90 @@
+[0m11:16:51.848624 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000190752B9940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019072B60A50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019077B67B10>]}
+
+
+============================== 11:16:51.853992 | 0892435f-f0e7-4f32-b7bd-2edd4756f3e9 ==============================
+[0m11:16:51.853992 [info ] [MainThread]: Running with dbt=1.12.0
+[0m11:16:51.855446 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'static_parser': 'True', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\CSS175028\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt init databricks_code', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': 'logs'}
+[0m11:16:51.878606 [debug] [MainThread]: Starter project path: C:\Users\CSS175028\Downloads\Databricks Test\dbt-env\Lib\site-packages\dbt\include\starter_project
+[0m11:16:51.915350 [info ] [MainThread]: Setting up your profile.
+[0m11:17:19.012351 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m11:17:19.013393 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m11:17:19.014144 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m11:23:16.506910 [info ] [MainThread]: Profile databricks_code written to C:\Users\CSS175028\.dbt\profiles.yml using target's profile_template.yml and your supplied values.
+[0m11:23:16.509604 [info ] [MainThread]: Running dbt debug to validate the project...
+[0m11:23:16.510522 [info ] [MainThread]: dbt version: 1.12.0
+[0m11:23:16.511321 [info ] [MainThread]: python version: 3.14.7
+[0m11:23:16.511931 [info ] [MainThread]: python path: C:\Users\CSS175028\Downloads\Databricks Test\dbt-env\Scripts\python.exe
+[0m11:23:16.512404 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m11:23:16.567773 [info ] [MainThread]: Using profiles dir at C:\Users\CSS175028\.dbt
+[0m11:23:16.568581 [info ] [MainThread]: Using profiles.yml file at C:\Users\CSS175028\.dbt\profiles.yml
+[0m11:23:16.569165 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\CSS175028\Downloads\Databricks Test\databricks_code\dbt_project.yml
+[0m11:23:16.569672 [info ] [MainThread]: adapter type: databricks
+[0m11:23:16.570142 [info ] [MainThread]: adapter version: 1.12.4
+[0m11:23:16.691675 [info ] [MainThread]: Configuration:
+[0m11:23:16.692676 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m11:23:16.693593 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m11:23:16.694317 [info ] [MainThread]: Required dependencies:
+[0m11:23:16.695152 [debug] [MainThread]: Executing "git --help"
+[0m11:23:16.701752 [info ] [MainThread]:  - git [[31mERROR[0m]
+
+[0m11:23:16.702547 [info ] [MainThread]: Connection:
+[0m11:23:16.703532 [info ] [MainThread]:   host: https://adb-7405618007615411.11.azuredatabricks.net
+[0m11:23:16.704031 [info ] [MainThread]:   http_path: https://adb-7405618007615411.11.azuredatabricks.net
+[0m11:23:16.704434 [info ] [MainThread]:   catalog: new_dev
+[0m11:23:16.704787 [info ] [MainThread]:   schema: test
+[0m11:23:16.705293 [info ] [MainThread]: Registered adapter: databricks=1.12.4
+[0m11:23:17.226579 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(session-id=None, name=debug) - Creating connection
+[0m11:23:17.227133 [debug] [MainThread]: Acquiring new databricks connection 'debug'
+[0m11:23:27.146299 [info ] [MainThread]: Databricks adapter: SPOG discovery probe to 'https://https://adb-7405618007615411.11.azuredatabricks.net/.well-known/databricks-config' failed after 3 attempts (last error: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: //adb-7405618007615411.11.azuredatabricks.net/.well-known/databricks-config (Caused by NameResolutionError("HTTPSConnection(host='https', port=443): Failed to resolve 'https' ([Errno 11001] getaddrinfo failed)"))). Proceeding as a non-SPOG host. If https://adb-7405618007615411.11.azuredatabricks.net is a SPOG (unified) workspace, routing errors may follow; verify network reachability to /.well-known/databricks-config.
+[0m11:23:27.150074 [info ] [MainThread]: Databricks adapter:   SPOG host (host_type=None): no
+[0m11:23:27.150767 [info ] [MainThread]: Databricks adapter:   workspace_id (from ?o= in http_path): None
+[0m11:23:27.151316 [info ] [MainThread]: Databricks adapter:   databricks-sql-connector version: 4.4.0 (supported)
+[0m11:23:27.151807 [info ] [MainThread]: Databricks adapter:   databricks-sdk version: 0.117.0 (supported)
+[0m11:23:27.152245 [debug] [MainThread]: Using databricks connection "debug"
+[0m11:23:27.152606 [debug] [MainThread]: On debug: select 1 as id
+[0m11:23:27.152990 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:23:32.895461 [error] [MainThread]: databricks-sql-connector adapter: ThriftBackend.attempt_request: Exception: %s
+[0m11:23:32.914472 [error] [MainThread]: Databricks adapter: Connection(session-id=Unknown) - Exception while trying to create connection: Error during request to server. 
+Error properties: attempt=1/30, bounded-retry-delay=None, elapsed-seconds=4.4219324588775635/900.0, error-message=, http-code=404, method=OpenSession, no-retry-reason=non-retryable error, original-exception=, query-id=None, session-id=None
+[0m11:23:32.915418 [debug] [MainThread]: Databricks adapter: Exception while trying to execute query
+select 1 as id
+: Database Error
+  Error during request to server. 
+[0m11:23:32.915841 [debug] [MainThread]: On debug: No close available on handle
+[0m11:23:32.916337 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m11:23:32.916967 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m11:23:32.917473 [info ] [MainThread]: Error from git --help: Could not find command, ensure it is in the user's PATH and that the user has permissions to run it: "git"
+
+[0m11:23:32.917915 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  Database Error
+    Error during request to server. 
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m11:23:32.918384 [info ] [MainThread]: Your new dbt project "databricks_code" was created!
+Initialized new project in C:\Users\CSS175028\Downloads\Databricks Test\databricks_code\databricks_code
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m11:23:32.918789 [info ] [MainThread]: [31mYour profile may need adjustments. You can find the logs of `dbt debug` above[0m
+[0m11:23:32.919770 [debug] [MainThread]: Command `dbt init` succeeded at 11:23:32.919652 after 401.46 seconds
+[0m11:23:32.920326 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001900C51A3F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001900C667770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001900C7FC7C0>]}
+[0m11:23:32.920822 [debug] [MainThread]: Flushing usage events
+[0m11:23:34.248690 [debug] [MainThread]: An error was encountered while trying to flush usage events
