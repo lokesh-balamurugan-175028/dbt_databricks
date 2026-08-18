@@ -1,2 +1,3 @@
 models:
   - name: src_customers
+  - name: src_orders
